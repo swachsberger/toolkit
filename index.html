@@ -198,16 +198,24 @@
   const apps = [
     {
       name: "Dice Roller",
-      code: "STREAMLIT",
-      desc: "Simple randomizer app, first Streamlit build.",
-      url: "https://your-dice-roller.streamlit.app",
+      code: "HTML",
+      desc: "Two-dice roller with tumbling animation and synthesized clicks.",
+      url: "dice-roller/",
+      online: true
+    },
+    {
+      name: "Countdown Numbers",
+      code: "HTML",
+      desc: "The TV numbers game: draw six tiles, hit the target, auto-solver included.",
+      url: "countdown/",
       online: true
     },
     {
       name: "Wall Planner",
       code: "HTML",
       desc: "Arrange framed photos on a wall, to scale, before you hang them.",
-      url: "https://swachsberger.github.io/wall-planner/wall-planner.html",
+      url: "https://swachsberger.github.io/wall-planner/",
+      external: true,
       online: true
     }
   ];
@@ -218,8 +226,7 @@
     const tile = document.createElement('a');
     tile.className = 'tile';
     tile.href = app.url;
-    tile.target = '_blank';
-    tile.rel = 'noopener noreferrer';
+    if (app.external) { tile.target = '_blank'; tile.rel = 'noopener noreferrer'; }
     tile.innerHTML = `
       <div class="tile-top">
         <span class="tile-code">${app.code}</span>
